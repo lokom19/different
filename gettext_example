@@ -1,0 +1,10 @@
+директория file.py 
+
+xgettext -i test.py -o test.pot -d test_i18n
+mkdir -p /locale/ru/LC_MESSAGES
+msginit -i test.pot -o locale/ru/LC_MESSAGES/test_i18n.po -l ru
+cd locale/ru/LC_MESSAGES
+поменять кодировку файла .po и добавить перевод строки 
+msgfmt test_i18n -o test_i18n.mo 
+cd .. cd .. cd ..
+запуск скрипта 
