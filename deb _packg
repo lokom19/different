@@ -1,0 +1,48 @@
+ changelog  compat  control  install  rules
+ 
+ ___________________________________________________
+ calbotreminder (1.2.3) UNRELEASED; urgency=medium
+
+  * Updating rsa encrypt
+  * Adding command /clean_me to start bot from the biginnig
+  * Correct connection new users
+
+ -- vmakeev <vmakeev@vmakeev>  Tue, 08 Nov 2022 18:16:25 +0300
+
+calbotreminder (1.2.0) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- vmakeev <vmakeev@vmakeev>  Mon, 2 Nov 2022 13:00:00 +0300
+______________________________________________________
+11
+______________________________________________________
+Source: calbotreminder
+Section: non-free/fly
+Priority: optional
+Maintainer: vmakeev <vmakeev@astralinux.ru>
+Build-Depends: debhelper (>=10), dh-python, python3-all
+Standards-Version: 3.8.0
+Homepage: https://astralinux.ru/
+
+
+Package: calbotreminder
+Architecture: any
+Depends: ${shlibs:Depends}, python3, bash
+Description: Libraries for fly applicati
+ Description here
+________________________________________________________
+*.* /opt/cal_bot_reminder
+venv /opt/cal_bot_reminder
+________________________________________________________
+ 
+%:
+          dh $@
+________________________________________________________
+
+
+
+попробуй удалить знаки подчеркивания и удостоверься что названия одинаковые в:
+1. имени папки
+2. debian/changelog
+3. debian/control
