@@ -8,3 +8,7 @@ cd locale/ru/LC_MESSAGES
 msgfmt test_i18n -o test_i18n.mo 
 cd .. cd .. cd ..
 запуск скрипта 
+
+
+And on unix systems you can write (: instead of ;)
+pyinstaller main.py --add-data mappings.json:.
