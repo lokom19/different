@@ -1,0 +1,11 @@
+все в один реп: 
+________________________________________________
+.gitlab-ci.yml
+variables:
+    ASTRA_TARGET_DISTR: "smolensk-1.7"
+include:
+    remote: "http://127.0.0.11:2020/astradyn.yml"
+_________________________________________________
+all necessary flles in same rep 
+dir debian 
+  in dir debian all needed files for dpkg
