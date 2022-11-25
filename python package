@@ -19,6 +19,9 @@ setup(
             'astra-event-viewer = main:data_output',
         ]
     },
-    packages=['astra-event-viewer']
+    packages=['astra-event-viewer'] # or find_packages()
 
 )
+
+
+UPD: файлы async_reading и reading_file в отдельные папки, туда же __init__.py (для инициализации пакета), импорт в main из этих папок
