@@ -1,0 +1,24 @@
+.
+├── async_reading.py
+├── __init__.py
+├── main.py
+└── reading_file.py
+в директории выше setup.py 
+в директории с файлом выполнить команду: python3 setup.py develop => в /usr/local/bin появится команда с названием пакета 
+
+
+файл setup.py: 
+где name = название директории с файлом __init__.py
+
+from setuptools import setup
+
+setup(
+    name='astra-event-viewer',
+    entry_points={
+        'console_scripts': [
+            'astra-event-viewer = main:data_output',
+        ]
+    },
+    packages=['astra-event-viewer']
+
+)
