@@ -16,7 +16,7 @@ setup(
     name='astra-event-viewer',
     entry_points={
         'console_scripts': [
-            'astra-event-viewer = main:data_output',
+            'astra-event-viewer = astra_event_viewer.main:data_output',
         ]
     },
     packages=['astra-event-viewer'] # or find_packages()
