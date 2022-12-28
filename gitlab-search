@@ -1,0 +1,3 @@
+gitlab-search setup --api-domain https://git.company.domen.ru/  --ignore-ssl <acces token> 
+
+gitlab-search "info_to_find"
