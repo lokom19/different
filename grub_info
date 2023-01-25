@@ -1,0 +1,10 @@
+initramfs - это начальная файловая система в оперативной памяти,
+основанная на tmpfs (легковесной файловой системе в памяти с изменяемым размером), 
+которая также не использовала отдельное блочное устройство (чтобы отсутствовало кэширование и все накладные расходы, упомянутые ранее, исчезли)
+______________________________
+Попадаем в initramfs => исправляем ошибки, выходим из терминала => загружается система, в которой надо тоже исправить ошибки 
+
+
+Read man initramfs-tools to learn about the break=something kernel parameter 
+(where valid arguments for something are: top, modules, premount, mount, mountroot, bottom, init), 
+which starts a debug shell. You can try, for example, break=premount.
