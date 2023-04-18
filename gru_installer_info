@@ -1,0 +1,41 @@
+fdisk - для работы с разделами дисков
+blkid - просмотр разделов 
+df -hT - просмотр mount 
+exec sudo systemctl switch-root /mnt/newroot /sbin/init - команда для выполнения switch_root с PID = 1
+файлы ядра: 
+  /etc/fstab 
+  /etc/default/grub 
+_________________________________________________________________________________________
+
+ИНФА ПО pivot_root:
+
+sudo unshare -m bash
+mount --bind /mnt/newroot /mnt/newroot
+
+
+Затем мы делаем pivot root:
+
+cd /mnt/newroot
+$ mkdir put_old
+pivot_root . oldroot
+$ cd /
+# Теперь у нас должен быть новый корневой каталог. Например, если мы сделаем:
+$ ls proc
+# proc пуст
+# И старый корневой каталог теперь в put_old
+$ ls put_old
+bin   dev  home        lib    lost+found  mnt  proc  run   srv  tmp  var
+boot  etc  initrd.img  lib64  media       opt  root  sbin  sys  usr  vmlinuz
+
+umount -l put_old
+_____________________________________________________________________________________________
+Создание образа диска:
+    sudo dd if=/dev/zero of=dummydisk.img bs=1G count=1
+    sudo losetup /dev/loop0 dummydisk.img
+    sudo mkfs.ext4 /dev/loop0
+    sudo mkdir -p /mnt/newroot
+    sudo mount /dev/loop0 /mnt/newroot/
+
+
+    sudo losetup -d /dev/loop0
+__________________________________________________________________________________________________
