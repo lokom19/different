@@ -1,0 +1,16 @@
+import datetime
+from typing import Callable, Optional
+
+
+class Logger:
+    file = '/var/log/...'
+    log_callback = None  # type: Optional[Callable[[str], None]]
+
+    @classmethod
+    def log(cls, message: str) -> None:
+        with open(cls.file, 'a') as file:
+            time = datetime.datetime.now().strftime("%Y-%m-%d-%H.%M.%S")
+            line = '{}: {}\n'.format(time, message)
+            file.write(line)
+            if cls.log_callback is not None:
+                cls.log_callback(line)
