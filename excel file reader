@@ -1,0 +1,16 @@
+filename = '/home/vmakeev/Desktop/rr.xlsx'
+peeksz = 4
+with open(filename, "rb") as f:
+    peek = f.read(peeksz)
+    if peek == b"PK\x03\x04": # a ZIP file
+        zf = zipfile.ZipFile(filename)
+        # print(type(zf))
+        with zf as z:
+            for n in z.namelist():
+                # print(n)
+                with z.open(n) as f:
+                    data = f.read()
+                    if f.name == 'xl/sharedStrings.xml':
+                    # if 'Федеральное' in data.decode():
+                        Bs_data = BeautifulSoup(data, "xml")
+                        print(Bs_data.decode())
