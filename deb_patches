@@ -1,0 +1,6 @@
+quilt series - просмотр патчей 
+quilt pop *.patch - удалить патч
+quilt new name.patch
+quilt edit file_name 
+quilt refresh 
+sudo dpkg-buildpackage -us -uc -nc
